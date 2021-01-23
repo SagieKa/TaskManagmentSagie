@@ -66,15 +66,16 @@ useEffect(()=>{
     // The signed-in user info.
     var user = result.user;
     console.log(user)
+    authDb()
     // ...
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-          console.log(user.email)
-          if(user.email==='sagieka@gmail.com') authDb()
-      } else {
-        // No user is signed in.
-      }
-    });
+    // firebase.auth().onAuthStateChanged(function(user) {
+    //   if (user) {
+    //       console.log(user.email)
+    //       if(user.email==='sagieka@gmail.com') authDb()
+    //   } else {
+    //     // No user is signed in.
+    //   }
+    // });
   }).catch((error) => {
 console.log(error)
   });
