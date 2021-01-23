@@ -122,7 +122,7 @@ const authDb=() => {
     setItem3(i3)
     setItem4(i4)
     setItem5(i5)
-    i1 = []
+     i1 = []
      i2 = []
      i3 = []
      i4 = []
