@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import TransferPage from './components/TransferPage/TransferPage'
+import AppBar from './components/AppBar/AppBar'
+const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+const theme = createMuiTheme({
+  direction: 'rtl', 
+});
+
+const useStyles = makeStyles((theme) => ({
+  Appbar: {
+    color:'red',
+    paddingBottom:theme.spacing(10),
+    marginButton:theme.spacing(2),
+  }
+
+}));
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StylesProvider jss={jss}>
+    <ThemeProvider theme={theme}> 
+      <AppBar className={classes.Appbar}/>
+      <TransferPage className={classes.Appbar}/>
+    </ThemeProvider>
+     </StylesProvider>
+ 
   );
 }
+
 
 export default App;
