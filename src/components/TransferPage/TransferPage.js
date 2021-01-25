@@ -179,10 +179,10 @@ const authDb=() => {
     }
   };
   const handleChecked1 = () => {
-    Add(item1Checked)
-      setItem2(item2.concat(item1Checked));
-      setItem1(not(item1, item1Checked));
+    setItem2(item2.concat(item1Checked));
+    setItem1(not(item1, item1Checked));
     setChecked(not(checked, item1Checked));
+    Add(item1Checked)
   };
 
   const handleChecked2 = () => {
@@ -193,42 +193,42 @@ const authDb=() => {
   };
 
   const handleChecked3 = () => {
-    Add(item2Checked)
     setItem3(item3.concat(item2Checked));
     setItem2(not(item2, item2Checked));
     setChecked(not(checked, item2Checked));
+    Add(item2Checked)
   };
   const handleChecked4 = () => {
-    Minus(item3Checked)
     setItem2(item2.concat(item3Checked));
     setItem3(not(item3, item3Checked));
     setChecked(not(checked,item3Checked));
+    Minus(item3Checked)
   };
 
   const handleChecked5 = () => {
-    Add(item3Checked)
     setItem4(item4.concat(item3Checked));
     setItem3(not(item3, item3Checked));
     setChecked(not(checked, item3Checked));
+    Add(item3Checked)
   };
   const handleChecked6 = () => {
-    Minus(item4Checked)
     setItem3(item3.concat(item4Checked));
     setItem4(not(item4, item4Checked));
     setChecked(not(checked,item4Checked));
+    Minus(item4Checked)
   };
 
   const handleChecked7 = () => {
-    Add(item4Checked)
     setItem5(item5.concat(item4Checked));
     setItem4(not(item4, item4Checked));
     setChecked(not(checked, item4Checked));
+    Add(item4Checked)
   };
   const handleChecked8 = () => {
-    Minus(item5Checked)
     setItem4(item4.concat(item5Checked));
     setItem5(not(item5, item5Checked));
     setChecked(not(checked,item5Checked));
+    Minus(item5Checked)
   };
 
 
